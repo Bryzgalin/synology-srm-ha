@@ -1,0 +1,80 @@
+enable_wifi:
+  name: Enable WiFi Network
+  description: Enable a WiFi network by profile ID and radio type or network name
+  fields:
+    profile_id:
+      name: Profile ID
+      description: WiFi profile ID (0 for primary, 1 for guest, etc.)
+      example: 1
+      selector:
+        number:
+          min: 0
+          max: 10
+    radio_type:
+      name: Radio Type
+      description: Radio type (2.4G, 5G-1, 5G-2, SmartConnect)
+      example: "2.4G"
+      selector:
+        select:
+          options:
+            - "2.4G"
+            - "5G-1"
+            - "5G-2"
+            - "SmartConnect"
+    network_name:
+      name: Network Name
+      description: WiFi network SSID (alternative to profile_id + radio_type)
+      example: "Guest_Network"
+      selector:
+        text:
+
+disable_wifi:
+  name: Disable WiFi Network
+  description: Disable a WiFi network by profile ID and radio type or network name
+  fields:
+    profile_id:
+      name: Profile ID
+      description: WiFi profile ID (0 for primary, 1 for guest, etc.)
+      example: 1
+      selector:
+        number:
+          min: 0
+          max: 10
+    radio_type:
+      name: Radio Type
+      description: Radio type (2.4G, 5G-1, 5G-2, SmartConnect)
+      example: "2.4G"
+      selector:
+        select:
+          options:
+            - "2.4G"
+            - "5G-1"
+            - "5G-2"
+            - "SmartConnect"
+    network_name:
+      name: Network Name
+      description: WiFi network SSID (alternative to profile_id + radio_type)
+      example: "Guest_Network"
+      selector:
+        text:
+
+toggle_smart_connect:
+  name: Toggle Smart Connect
+  description: Enable or disable Smart Connect mode for a WiFi profile
+  fields:
+    profile_id:
+      name: Profile ID
+      description: WiFi profile ID to toggle Smart Connect for
+      required: true
+      example: 0
+      selector:
+        number:
+          min: 0
+          max: 10
+    enable:
+      name: Enable
+      description: Enable or disable Smart Connect
+      example: true
+      default: true
+      selector:
+        boolean:
